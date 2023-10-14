@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>라디오 버튼의 스타일 적용</title>
+    <style>
+        .container { /*중간에 두기*/
+            width: 960px;
+            margin: 0 auto;
+        }
+        .navi { /*메뉴 아래에 있는 선*/
+            width: 900px;
+            height: 60px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+        }
+        .navi ul{ /*목록 스타일 없음*/
+            list-style: none;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        .navi ul li{ /*메뉴 목록*/
+            display: inline-block;
+            width: 150px;
+            padding: 10px;
+        }
+        .navi a:link, .navi a:visited{ /*메뉴 목록으로 이동할 시*/
+            font-size: 14px;
+            padding: 10px;
+            text-decoration: none; /*밑줄 없앰*/
+        }
+        .navi a:hover, .navi a:focus {
+            background-color: #222;
+            color: #fff; 
+        }
+        .navi a:active {
+            background-color:#f00;  /* 배경색 */
+        }
+        #signup { /*예약하기 (회원가입)*/
+            background: #fff;
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 20px;
+            width: 400px;
+            margin: 30px auto; 
+        }
+        
+        #signup fieldset{ /*개인 정보 및 객실 형태 박스*/
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+        }
+
+        #signup legend { /*박스 이름*/
+            font-size: 16px;
+            font-weight: bold;
+            padding-left:5px;
+            padding-bottom: 10px;	
+        }
+        
+        #signup ul li{ /*개인 정보 및 객실 형태에 있는 리스트*/
+            line-height: 30px; /*폰트 크기*/
+            list-style: none; /*리스트 스타일*/
+            padding: 5px 10px;
+            margin-bottom: 2px;
+        }
+        #signup fieldset:first-of-type label { /*요소 중 가장 첫번째에 있는 첫번째 요소*/
+            float: left;
+            font-size: 13px;
+            width: 60px;
+        }
+        #signup input:not([type=radio]) { /*입력란*/
+            border:1px solid #ccc;
+            border-radius: 3px;
+            padding: 5px;
+            width: 200px;
+        }
+        #signup input:not([type=radio]):hover {
+            border-color: #f00;
+        }
+        #signup input:checked + label { /*객실 형태 선택했을 시 */
+            color: red;
+            font-weight: bold;
+        }
+        #signup button { /*제출버튼*/
+            border: 1px solid #222;
+            border-radius: 20px;
+            display: block;
+            font: 16px 맑은고딕,굴림,돋움;
+            letter-spacing: 1px;
+            margin: auto;
+            padding: 7px 25px; 
+        }
+        #signup b{
+            float: left;
+            font-size: 13px;
+            width: 110px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class ="navi">
+            <ul>
+                <li><a href="ps-1.html#intro">이용 안내</a></li>
+                <li><a href="ps-1.html#room">객실 소개</a></li>
+                <li><a href="ps-1.html#servation">예약 방법 및 요금</a></li>
+                <li><a href="ps-2.html">예약하기</a></li>
+            </ul>
+        </nav>
+        <form id="signup">
+            <fieldset>
+                <legend>개인 정보</legend>
+                <ul>
+                    <li>
+                        <label for="fullname">이름</label>
+                        <input id="fullname" name="fullname" type="text" required>
+                    </li>
+                    <li>
+                        <label for="tel">연락처</label>
+                        <input id="tel" name="tel" type="tel">
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>객실 형태</legend>
+                <ul>
+                    <li>
+                        <input type="radio" name="room" id="basic">
+                        <label for="basic">기본형(최대 2인)</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="room" id="family">
+                        <label for="family">가족형(최대 8인)</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <button type="submit"> 제출 </button>
+        </form>
+    </div>
+</body>
+</html>
